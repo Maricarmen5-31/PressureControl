@@ -1,4 +1,4 @@
-package com.example.nestednavigationbottombardemo.ui.theme
+package com.example.projectdanp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.example.nestednavigationbottombardemo
+package com.example.projectdanp
 
 import org.junit.Test
 

@@ -1,11 +1,11 @@
-package com.example.nestednavigationbottombardemo
+package com.example.projectdanp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
-import com.example.nestednavigationbottombardemo.graphs.RootNavigationGraph
-import com.example.nestednavigationbottombardemo.ui.theme.NestedNavigationBottomBarDemoTheme
+import com.example.projectdanp.graphs.RootNavigationGraph
+import com.example.projectdanp.ui.theme.NestedNavigationBottomBarDemoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

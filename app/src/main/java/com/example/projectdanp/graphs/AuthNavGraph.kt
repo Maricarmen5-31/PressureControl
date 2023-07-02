@@ -1,11 +1,11 @@
-package com.example.nestednavigationbottombardemo.graphs
+package com.example.projectdanp.graphs
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.nestednavigationbottombardemo.screens.LoginContent
-import com.example.nestednavigationbottombardemo.screens.ScreenContent
+import com.example.projectdanp.screens.LoginContent
+import com.example.projectdanp.screens.ScreenContent
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(

@@ -1,4 +1,4 @@
-package com.example.nestednavigationbottombardemo.graphs
+package com.example.projectdanp.graphs
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.nestednavigationbottombardemo.BottomBarScreen
-import com.example.nestednavigationbottombardemo.screens.ScreenContent
+import com.example.projectdanp.BottomBarScreen
+import com.example.projectdanp.screens.ScreenContent
 
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
@@ -30,13 +30,13 @@ fun HomeNavGraph(navController: NavHostController) {
                 onClick = { }
             )
         }
-        composable(route = BottomBarScreen.Settings.route) {
+        composable(route = BottomBarScreen.Register.route) {
             ScreenContent(
-                name = BottomBarScreen.Settings.route,
+                name = BottomBarScreen.Register.route,
                 onClick = { }
             )
         }
-        detailsNavGraph(navController = navController)
+        //detailsNavGraph(navController = navController)
     }
 }
 

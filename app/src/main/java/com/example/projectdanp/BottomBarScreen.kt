@@ -1,4 +1,4 @@
-package com.example.nestednavigationbottombardemo
+package com.example.projectdanp
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -23,9 +23,9 @@ sealed class BottomBarScreen(
         icon = Icons.Default.Person
     )
 
-    object Settings : BottomBarScreen(
-        route = "SETTINGS",
-        title = "SETTINGS",
+    object Register : BottomBarScreen(
+        route = "REGISTER",
+        title = "REGISTER",
         icon = Icons.Default.Settings
     )
 }
