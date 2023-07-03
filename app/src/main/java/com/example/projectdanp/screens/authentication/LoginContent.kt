@@ -2,7 +2,9 @@ package com.example.projectdanp.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -18,6 +20,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.projectdanp.screens.graphs.Graph
 import com.example.projectdanp.ui.theme.Purple500
 
 @Composable
@@ -69,13 +72,25 @@ fun LoginContent(
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
-            Text(
+        Box(modifier = Modifier.padding(90.dp, 0.dp, 90.dp, 0.dp)) {
+            Button(
+                onClick = { },
+                shape = RoundedCornerShape(50.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) {
+                Text(modifier = Modifier.clickable { onClick() },
+                    text = "INICIAR SESION",
+                    fontSize = MaterialTheme.typography.body1.fontSize,
+                )
+            }
+            /*Text(
                 modifier = Modifier.clickable { onClick() },
                 text = "Login",
                 fontSize = MaterialTheme.typography.h2.fontSize,
                 fontFamily = FontFamily.Default
-            )
+            )*/
         }
 
         Spacer(modifier = Modifier.height(100.dp))
