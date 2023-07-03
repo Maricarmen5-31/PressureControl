@@ -20,10 +20,10 @@ fun RootNavigationGraph(navController: NavHostController) {
             HomeScreen()
         }
         composable(route = Graph.SIGNUP) {
-            SignUpScreen()
+            SignUpScreen(navController = navController)
         }
         composable(route = Graph.FORGOT) {
-            ForgotPassword()
+            ForgotPassword(navController = navController)
         }
     }
 }
