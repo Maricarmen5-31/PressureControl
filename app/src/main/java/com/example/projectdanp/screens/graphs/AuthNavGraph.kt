@@ -1,4 +1,4 @@
-package com.example.projectdanp.graphs
+package com.example.projectdanp.screens.graphs
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController

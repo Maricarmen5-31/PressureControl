@@ -23,9 +23,9 @@ sealed class BottomBarScreen(
         icon = Icons.Default.Person
     )
 
-    object Register : BottomBarScreen(
-        route = "REGISTER",
-        title = "REGISTER",
+    object More : BottomBarScreen(
+        route = "MORE",
+        title = "MORE",
         icon = Icons.Default.Settings
     )
 }

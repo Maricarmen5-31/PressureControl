@@ -8,7 +8,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.projectdanp.graphs.RootNavigationGraph
+import com.example.projectdanp.screens.graphs.RootNavigationGraph
 import com.example.projectdanp.ui.theme.NestedNavigationBottomBarDemoTheme
 
 class MainActivity : ComponentActivity() {

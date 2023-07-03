@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.projectdanp.BottomBarScreen
-import com.example.projectdanp.graphs.HomeNavGraph
+import com.example.projectdanp.screens.graphs.HomeNavGraph
 
 @Composable
 fun HomeScreen(navController: NavHostController = rememberNavController()) {
@@ -27,7 +27,7 @@ fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Home,
         BottomBarScreen.Profile,
-        BottomBarScreen.Register,
+        BottomBarScreen.More,
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination

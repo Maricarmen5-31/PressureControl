@@ -1,4 +1,4 @@
-package com.example.projectdanp.graphs
+package com.example.projectdanp.screens.graphs
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.projectdanp.BottomBarScreen
+import com.example.projectdanp.screens.RegisterDataSensor
 import com.example.projectdanp.screens.ScreenContent
 
 @Composable
@@ -17,12 +18,7 @@ fun HomeNavGraph(navController: NavHostController) {
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            ScreenContent(
-                name = BottomBarScreen.Home.route,
-                onClick = {
-                    navController.navigate(Graph.DETAILS)
-                }
-            )
+            RegisterDataSensor()
         }
         composable(route = BottomBarScreen.Profile.route) {
             ScreenContent(
@@ -30,9 +26,9 @@ fun HomeNavGraph(navController: NavHostController) {
                 onClick = { }
             )
         }
-        composable(route = BottomBarScreen.Register.route) {
+        composable(route = BottomBarScreen.More.route) {
             ScreenContent(
-                name = BottomBarScreen.Register.route,
+                name = BottomBarScreen.More.route,
                 onClick = { }
             )
         }
