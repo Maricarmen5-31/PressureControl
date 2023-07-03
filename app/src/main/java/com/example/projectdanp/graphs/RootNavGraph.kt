@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.bottomnavbardemo.screens.home.HomeScreen
+import com.example.projectdanp.screens.authentication.ForgotPassword
+import com.example.projectdanp.screens.authentication.SignUpScreen
 
 @Composable
 fun RootNavigationGraph(navController: NavHostController) {
@@ -17,6 +19,12 @@ fun RootNavigationGraph(navController: NavHostController) {
         composable(route = Graph.HOME) {
             HomeScreen()
         }
+        composable(route = Graph.SIGNUP) {
+            SignUpScreen()
+        }
+        composable(route = Graph.FORGOT) {
+            ForgotPassword()
+        }
     }
 }
 
@@ -25,4 +33,6 @@ object Graph {
     const val AUTHENTICATION = "auth_graph"
     const val HOME = "home_graph"
     const val DETAILS = "details_graph"
+    const val SIGNUP = "signup_graph"
+    const val FORGOT = "forgot_graph"
 }
