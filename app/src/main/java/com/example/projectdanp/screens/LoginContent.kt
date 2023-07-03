@@ -13,11 +13,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.projectdanp.ui.theme.Purple500
 
 @Composable
 fun LoginContent(
@@ -38,7 +39,7 @@ fun LoginContent(
         }
 
         Text(
-            text = "HealthyBP",
+            text = "PressureControl",
             style = TextStyle(fontSize = 60.sp, fontFamily = FontFamily.Cursive)
         )
 
@@ -72,8 +73,8 @@ fun LoginContent(
             Text(
                 modifier = Modifier.clickable { onClick() },
                 text = "Login",
-                fontSize = MaterialTheme.typography.h3.fontSize,
-                fontWeight = FontWeight.Bold
+                fontSize = MaterialTheme.typography.h2.fontSize,
+                fontFamily = FontFamily.Default
             )
         }
 
@@ -83,16 +84,20 @@ fun LoginContent(
             modifier = Modifier.clickable { onSignUpClick() },
             text = "Sign Up",
             fontSize = MaterialTheme.typography.body1.fontSize,
-            fontWeight = FontWeight.Medium
+            textDecoration = TextDecoration.Underline,
+            color = Purple500,
+            fontFamily = FontFamily.Default
         )
 
-        Spacer(modifier = Modifier.height(100.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         Text(
             modifier = Modifier.clickable { onForgotClick() },
             text = "Forgot Password",
             fontSize = MaterialTheme.typography.body1.fontSize,
-            fontWeight = FontWeight.Medium
+            textDecoration = TextDecoration.Underline,
+            color = Purple500,
+            fontFamily = FontFamily.Default
         )
     }
 }

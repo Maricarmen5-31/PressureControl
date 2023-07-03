@@ -3,6 +3,10 @@ package com.example.projectdanp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.projectdanp.graphs.RootNavigationGraph
 import com.example.projectdanp.ui.theme.NestedNavigationBottomBarDemoTheme
@@ -12,7 +16,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NestedNavigationBottomBarDemoTheme {
-                RootNavigationGraph(navController = rememberNavController())
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    RootNavigationGraph(navController = rememberNavController())
+                }
             }
         }
     }
