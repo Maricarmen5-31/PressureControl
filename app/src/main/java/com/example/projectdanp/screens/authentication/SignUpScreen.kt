@@ -18,12 +18,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavController
 import com.example.projectdanp.screens.CustomTopAppBar
 
 @Composable
-fun SignUpScreen (navController: NavHostController = rememberNavController()){
+fun SignUpScreen (navController: NavController){
     Scaffold(
         topBar = { CustomTopAppBar(
             navController = navController,
