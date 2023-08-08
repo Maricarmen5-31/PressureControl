@@ -18,8 +18,8 @@ sealed class BottomBarScreen(
     )
 
     object Profile : BottomBarScreen(
-        route = "PROFILE",
-        title = "PROFILE",
+        route = "pantalla",
+        title = "persona",
         icon = Icons.Default.Person
     )
 
