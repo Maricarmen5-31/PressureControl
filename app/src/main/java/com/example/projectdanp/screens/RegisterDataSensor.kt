@@ -1,6 +1,7 @@
 package com.example.projectdanp.screens
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -12,10 +13,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.projectdanp.R
 import com.maxkeppeker.sheets.core.models.base.rememberSheetState
 import com.maxkeppeler.sheets.calendar.CalendarDialog
 import com.maxkeppeler.sheets.calendar.models.CalendarSelection
@@ -26,7 +30,9 @@ fun RegisterDataSensor() {
     val calendarState = rememberSheetState()
 
     Column(
-        modifier = Modifier.padding(20.dp),
+        modifier = Modifier
+            .padding(20.dp)
+            .background(color = Color(0xFFE9EEE9)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -56,10 +62,11 @@ fun RegisterDataSensor() {
 
         Text(
             text = "Registro de Frecuencia Cardiaca",
+            color = colorResource(id = R.color.green2),
             style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive)
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         TextField(
             label = { Text(text = "Pulso de paciente") },
@@ -84,6 +91,9 @@ fun RegisterDataSensor() {
             Button(
                 onClick = { calendarState.show() },
                 shape = RoundedCornerShape(50.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = colorResource(id = R.color.green),
+                    contentColor = Color.White),
                 modifier = Modifier
                     .padding(15.dp, 0.dp, 0.dp, 0.dp)
                     .height(40.dp)
@@ -109,7 +119,7 @@ fun RegisterDataSensor() {
             onValueChange = { peso.value = it }
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         var show by rememberSaveable {
             mutableStateOf(false)
@@ -121,6 +131,9 @@ fun RegisterDataSensor() {
                     show = true
                 },
                 shape = RoundedCornerShape(50.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = colorResource(id = R.color.green),
+                    contentColor = Color.White),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
@@ -129,7 +142,7 @@ fun RegisterDataSensor() {
             }
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
@@ -137,6 +150,9 @@ fun RegisterDataSensor() {
                     show = true
                 },
                 shape = RoundedCornerShape(50.dp),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = colorResource(id = R.color.green),
+                    contentColor = Color.White),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
@@ -157,7 +173,7 @@ fun DialogConfirm(
 ) {
     if(show) {
         AlertDialog(onDismissRequest = { onDismiss() },
-            confirmButton = { TextButton(onClick = { onConfirm() }) {
+            confirmButton = { TextButton(onClick = { onDismiss() }) {
                 Text(text = "Aceptar")
             }},
             dismissButton = { TextButton(onClick = { onDismiss() }) {

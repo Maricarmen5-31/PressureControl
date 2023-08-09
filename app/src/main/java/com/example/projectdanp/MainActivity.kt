@@ -9,13 +9,13 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.projectdanp.screens.graphs.RootNavigationGraph
-import com.example.projectdanp.ui.theme.NestedNavigationBottomBarDemoTheme
+import com.example.projectdanp.ui.theme.PressureControlApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NestedNavigationBottomBarDemoTheme {
+            PressureControlApp(){
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
