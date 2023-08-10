@@ -13,13 +13,18 @@ import androidx.navigation.compose.rememberNavController
 import com.example.projectdanp.BottomBarScreen
 import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.graphs.HomeNavGraph
+import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensorViewModel
 
 @Composable
-fun HomeScreen(viewModel: DataViewModel, navController: NavHostController = rememberNavController()) {
+fun HomeScreen(
+    viewModel: DataViewModel,
+    registerDataSensorViewModel: RegisterDataSensorViewModel,
+    navController: NavHostController = rememberNavController()
+) {
     Scaffold(
         bottomBar = { BottomBar(navController = navController) }
     ) {
-        HomeNavGraph(viewModel, navController = navController)
+        HomeNavGraph(viewModel, registerDataSensorViewModel, navController = navController)
     }
 }
 

@@ -67,7 +67,6 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:2.44"
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
 
-
     // Jetpack Paging
     implementation "androidx.paging:paging-compose:1.0.0-alpha12"
     implementation 'com.google.code.gson:gson:2.8.7'
@@ -77,4 +76,10 @@ dependencies {
 
     //calendar
     implementation 'com.maxkeppeler.sheets-compose-dialogs:calendar:1.0.2'
+
+    // paho mqtt
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }

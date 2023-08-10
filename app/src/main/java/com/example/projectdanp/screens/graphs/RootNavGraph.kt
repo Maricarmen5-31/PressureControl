@@ -8,9 +8,13 @@ import com.example.projectdanp.screens.home.HomeScreen
 import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.authentication.ForgotPassword
 import com.example.projectdanp.screens.authentication.SignUpScreen
+import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensorViewModel
 
 @Composable
-fun RootNavigationGraph(viewModel: DataViewModel, navController: NavHostController) {
+fun RootNavigationGraph(
+    viewModel: DataViewModel,
+    registerDataSensorViewModel: RegisterDataSensorViewModel,
+    navController: NavHostController) {
     NavHost(
         navController = navController,
         route = Graph.ROOT,
@@ -18,7 +22,7 @@ fun RootNavigationGraph(viewModel: DataViewModel, navController: NavHostControll
     ) {
         authNavGraph(navController = navController)
         composable(route = Graph.HOME) {
-            HomeScreen(viewModel)
+            HomeScreen(viewModel, registerDataSensorViewModel)
         }
         composable(route = Graph.SIGNUP) {
             SignUpScreen(navController = navController)

@@ -11,16 +11,21 @@ import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.*
 import com.example.projectdanp.screens.history.ListScreen
 import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensor
+import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensorViewModel
 
 @Composable
-fun HomeNavGraph(viewModel: DataViewModel, navController: NavHostController) {
+fun HomeNavGraph(
+    viewModel: DataViewModel,
+    registerDataSensorViewModel: RegisterDataSensorViewModel,
+    navController: NavHostController
+) {
     NavHost(
         navController = navController,
         route = Graph.HOME,
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            RegisterDataSensor()
+            RegisterDataSensor(registerDataSensorViewModel)
         }
         composable(route = BottomBarScreen.List.route) {
             ListScreen(viewModel)

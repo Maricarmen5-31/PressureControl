@@ -14,11 +14,14 @@ import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.graphs.RootNavigationGraph
 import com.example.projectdanp.ui.theme.PressureControlApp
 import com.example.projectdanp.paging.DataViewModelFactory
+import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensorViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     private val viewModel: DataViewModel by viewModels { DataViewModelFactory(DataRepository(this)) }
+    private val registerDataSensorViewModel: RegisterDataSensorViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    RootNavigationGraph(viewModel, navController = rememberNavController())
+                    RootNavigationGraph(viewModel, registerDataSensorViewModel, navController = rememberNavController())
                 }
             }
         }

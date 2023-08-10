@@ -26,7 +26,7 @@ import com.maxkeppeler.sheets.calendar.models.CalendarSelection
 
 @Composable
 fun RegisterDataSensor(
-    viewModel: RegisterDataSensorViewModel = hiltViewModel()
+    viewModel: RegisterDataSensorViewModel
 ) {
 
     val calendarState = rememberSheetState()
