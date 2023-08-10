@@ -1,4 +1,4 @@
-package com.example.projectdanp.screens
+package com.example.projectdanp.screens.registerDataSensor
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -19,13 +18,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.projectdanp.R
 import com.maxkeppeker.sheets.core.models.base.rememberSheetState
 import com.maxkeppeler.sheets.calendar.CalendarDialog
 import com.maxkeppeler.sheets.calendar.models.CalendarSelection
 
 @Composable
-fun RegisterDataSensor() {
+fun RegisterDataSensor(
+    viewModel: RegisterDataSensorViewModel = hiltViewModel()
+) {
 
     val calendarState = rememberSheetState()
 
@@ -37,41 +39,33 @@ fun RegisterDataSensor() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
-        val pulsoFrecuCard = remember {
-            mutableStateOf("")
-        }
-
-        val nivelOxigenoSangre = remember {
-            mutableStateOf("")
-        }
-
-        val peso = remember {
-            mutableStateOf("")
-        }
-
-        val fecha = remember {
-            mutableStateOf("")
-        }
-
         CalendarDialog(
             state = calendarState,
             selection = CalendarSelection.Date { date ->
-                fecha.value = "$date"
+                viewModel.fecha = "$date"
             }
         )
 
         Text(
-            text = "Registro de Frecuencia Cardiaca",
+            text = "Presión Arterial",
             color = colorResource(id = R.color.green2),
             style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Cursive)
         )
 
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         TextField(
-            label = { Text(text = "Pulso de paciente") },
-            value = pulsoFrecuCard.value,
-            onValueChange = { pulsoFrecuCard.value = it }
+            label = { Text(text = "Presión Sistólica") },
+            value = viewModel.presionSistolica,
+            onValueChange = { viewModel.presionSistolica = it },
+        )
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        TextField(
+            label = { Text(text = "Presión Diastólica") },
+            value = viewModel.presionDiastolica,
+            onValueChange = { viewModel.presionDiastolica = it }
         )
 
         Spacer(modifier = Modifier.height(15.dp))
@@ -85,8 +79,8 @@ fun RegisterDataSensor() {
             TextField(
                 modifier = Modifier.width(174.dp),
                 label = { Text(text = "Fecha Medición") },
-                value = fecha.value,
-                onValueChange = { fecha.value = it }
+                value = viewModel.fecha,
+                onValueChange = { viewModel.fecha = it }
             )
             Button(
                 onClick = { calendarState.show() },
@@ -103,23 +97,24 @@ fun RegisterDataSensor() {
                 Text(text = "Ver")
             }
         }
+
         Spacer(modifier = Modifier.height(15.dp))
 
         TextField(
-            label = { Text(text = "Nivel Oxigeno en Sangre") },
-            value = nivelOxigenoSangre.value,
-            onValueChange = { nivelOxigenoSangre.value = it }
+            label = { Text(text = "Undad de medida") },
+            value = viewModel.unidad,
+            onValueChange = { viewModel.unidad = it }
         )
 
         Spacer(modifier = Modifier.height(15.dp))
 
         TextField(
-            label = { Text(text = "Peso del paciente") },
-            value = peso.value,
-            onValueChange = { peso.value = it }
+            label = { Text(text = "Notas") },
+            value = viewModel.notas,
+            onValueChange = { viewModel.notas = it }
         )
 
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         var show by rememberSaveable {
             mutableStateOf(false)
@@ -142,7 +137,7 @@ fun RegisterDataSensor() {
             }
         }
 
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         Box(modifier = Modifier.padding(40.dp, 0.dp, 40.dp, 0.dp)) {
             Button(
@@ -160,6 +155,10 @@ fun RegisterDataSensor() {
                 Text(text = "Obtener data sensor")
             }
         }
+
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Text(viewModel.data)
 
         DialogConfirm(show, {show = false}, { Log.i("accion", "click")})
     }

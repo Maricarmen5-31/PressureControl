@@ -9,6 +9,8 @@ import androidx.navigation.navigation
 import com.example.projectdanp.BottomBarScreen
 import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.*
+import com.example.projectdanp.screens.history.ListScreen
+import com.example.projectdanp.screens.registerDataSensor.RegisterDataSensor
 
 @Composable
 fun HomeNavGraph(viewModel: DataViewModel, navController: NavHostController) {

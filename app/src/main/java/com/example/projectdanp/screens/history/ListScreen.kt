@@ -1,4 +1,4 @@
-package com.example.projectdanp.screens
+package com.example.projectdanp.screens.history
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

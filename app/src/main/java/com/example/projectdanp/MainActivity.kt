@@ -14,7 +14,9 @@ import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.graphs.RootNavigationGraph
 import com.example.projectdanp.ui.theme.PressureControlApp
 import com.example.projectdanp.paging.DataViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel: DataViewModel by viewModels { DataViewModelFactory(DataRepository(this)) }
 
