@@ -1,4 +1,4 @@
-package com.example.bottomnavbardemo.screens.home
+package com.example.projectdanp.screens.home
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
@@ -11,14 +11,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.projectdanp.BottomBarScreen
+import com.example.projectdanp.paging.DataViewModel
 import com.example.projectdanp.screens.graphs.HomeNavGraph
 
 @Composable
-fun HomeScreen(navController: NavHostController = rememberNavController()) {
+fun HomeScreen(viewModel: DataViewModel, navController: NavHostController = rememberNavController()) {
     Scaffold(
         bottomBar = { BottomBar(navController = navController) }
     ) {
-        HomeNavGraph(navController = navController)
+        HomeNavGraph(viewModel, navController = navController)
     }
 }
 
@@ -26,6 +27,7 @@ fun HomeScreen(navController: NavHostController = rememberNavController()) {
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Home,
+        BottomBarScreen.List,
         BottomBarScreen.Profile,
         BottomBarScreen.More,
     )
